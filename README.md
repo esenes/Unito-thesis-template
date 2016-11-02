@@ -34,14 +34,15 @@ It was written from scratch with the help of many guides/tamplates found on the 
 ### Compiling instructions
 The main file `thesis.tex`, eventually you can rename it as you wish. The compile sequence with bibliography is:
 
-* Using TeXShop
+Using TeXShop
 
     Run LaTeX
     Run BibTeX
     Run LaTeX
     Run LaTex
     
-* Using a sh script
+Using a sh script
+
     same sequence but you have to compile the subfiles as well
 
 ### Useful readings
