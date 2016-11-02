@@ -27,13 +27,20 @@ It was written from scratch with the help of many guides/tamplates found on the 
         ├── bibliography.tex
         └── ...
     ├── images 
-    ├── bibliography
-    └── custom libraries     # put here custom libraries downloaded from the web
+    └── bibliography
+        └── bibThesis.bib
 ```
 
 ### Compiling instructions
-Is sufficient run the file `thesis.tex`, eventually you can rename it as you wish
+The main file `thesis.tex`, eventually you can rename it as you wish. The compile sequence with bibliography is:
 
+* Using TeXShop
+    1. Run LaTeX
+    2. Run BibTeX
+    3. Run LaTeX
+    4. Run LaTex
+* Using a sh script
+    same sequence but you have to compile the subfiles as well
 
 ### Useful readings
 About latex itself
