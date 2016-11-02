@@ -35,10 +35,12 @@ It was written from scratch with the help of many guides/tamplates found on the 
 The main file `thesis.tex`, eventually you can rename it as you wish. The compile sequence with bibliography is:
 
 * Using TeXShop
-    1. Run LaTeX
-    2. Run BibTeX
-    3. Run LaTeX
-    4. Run LaTex
+
+    Run LaTeX
+    Run BibTeX
+    Run LaTeX
+    Run LaTex
+    
 * Using a sh script
     same sequence but you have to compile the subfiles as well
 
