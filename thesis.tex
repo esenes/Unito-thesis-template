@@ -71,9 +71,7 @@
 %%CAPTIONS
 \usepackage{caption}
 %% BIBLIOGRAPHY
-%\usepackage[style=numeric]{csquotes}
-\usepackage[style=numeric,backend=biber]{biblatex}
-\addbibresource{bibliography/bibDatabase.bib}
+\usepackage[babel]{csquotes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% BEGIN DOCUMENT
@@ -123,8 +121,9 @@
 \clearemptydoublepage
 %bibliography
 \addcontentsline{toc}{chapter}{Bibliography}
-\printbibliography
-
+\bibliography{bibliography/bibThesis}
+\bibliographystyle{ieeetr}
+\clearemptydoublepage
 
 
 \end{document}
