@@ -1,9 +1,78 @@
-\chapter*{Introduction}
-\addcontentsline{toc}{chapter}{Introduction}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui sem, aliquam id ultricies sit amet, fermentum at magna. Aenean vitae rhoncus leo. Fusce gravida consequat lacus, a porta risus bibendum semper. Morbi eget auctor velit. Pellentesque eu lacinia nisi. Maecenas sed orci eu erat porta imperdiet ac non dui. Pellentesque a odio ac quam euismod tempor. Nulla in dapibus mauris, a sodales ex. In imperdiet enim sed ornare sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec vehicula metus eu nisi ornare euismod. Proin at ex non ex iaculis porta.
+\chapter{Introduction - How to use this template}
 
-In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non dictum. Sed tempus, quam non vehicula dictum, mauris nisl posuere metus, eu lobortis odio risus at dui. Nullam non ante vulputate nulla ultrices euismod eu a diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nec augue a risus viverra mattis. Ut tincidunt egestas nulla at semper. Fusce pretium, leo quis consectetur viverra, arcu lectus ornare leo, quis commodo ex risus sit amet velit. Nullam finibus lorem in mi tincidunt, sed feugiat lectus tincidunt. In hac habitasse platea dictumst. Sed quis auctor odio, at sodales nunc. Donec vulputate massa sit amet dolor sollicitudin, vel pretium quam scelerisque. Nullam et massa eleifend, venenatis ante vitae, ornare libero. Suspendisse potenti. Nam ante lacus, porttitor vel turpis quis, pellentesque auctor velit.
+\section{Choose your stile}
 
-Morbi eget elementum tellus. Sed varius lacus ac nulla maximus, et varius lacus varius. Nulla faucibus magna sit amet magna auctor, vitae placerat turpis imperdiet. Duis blandit bibendum tellus nec accumsan. Aliquam arcu nulla, efficitur vitae sodales eu, tincidunt ac tortor. Cras gravida vulputate porttitor. Etiam ornare est at efficitur convallis. Quisque pulvinar tellus pulvinar lacus tristique, bibendum dapibus velit ultricies. Suspendisse id faucibus dui. Sed quis convallis dui. Etiam aliquam suscipit eros id pellentesque. Aliquam a suscipit leo, sit amet convallis dui. Donec sed pretium quam. Mauris nec tincidunt mi, in feugiat quam.
+Since no style reference has been provided, we are quite free: you have first of all to choose the style and change some lines in the file \url{thesis.tex}. When two options are available, one of the two is commented starting the line with \%. To change it, comment what you don't need and de-comment the other option:
 
-Sed convallis pulvinar dui et ullamcorper. Maecenas facilisis, ante a tristique convallis, nunc ipsum fermentum odio, a auctor ligula risus ut nibh. Praesent sit amet tempus metus. Proin enim ipsum, mollis in nunc sed, tempus tempor magna. Nam ultricies lacus et porttitor bibendum. Suspendisse sit amet placerat nibh. Curabitur rutrum massa eu tortor sodales iaculis. Mauris sit amet odio eget velit tempus auctor. Pellentesque nec posuere neque. Nam in orci vehicula, ullamcorper sapien quis, pellentesque mauris. Sed eu porta ex. 
+\subsection{Single- or Double-sided}
+I like better the Single-sided, but if you want to go double-sided remove at line 14
+\begin{verbatim}
+\documentclass[12pt,a4paper,openright,oneside]{book}	%%One sided
+\end{verbatim}
+and de-comment line 15
+\begin{verbatim}
+\documentclass[12pt,a4paper,openright,twoside]{book}	%%Double sided
+\end{verbatim}
+
+\subsection{Headers and footers}
+Lines 22-42 are going to use 
+
+
+\subsection{PDF settings}
+Insert the information about you and the thesis in lines 56-61. They will be included in the PDF information
+\begin{verbatim}
+\hypersetup{
+    pdfauthor={AuthorName},
+    pdftitle={shortTitle},
+    pdfsubject={subject},
+    pdfkeywords={keyword1, keyword2}
+}
+\end{verbatim}
+
+\subsection{Language}
+The main language is the last, so for a thesis in english line 69 is
+\begin{verbatim}
+\usepackage[italian,english]{babel} 
+\end{verbatim}
+Swap ita with eng fi you are writing in italian as main language
+
+
+
+
+\section[Sectioning]{Chapters, sections and subsections}
+
+A thesis has three parts: head, body and tail. Three correspondent folders are containing the source files for these parts.
+
+Any of this source files is imported in the \url{thesis.tex} file, which is the only one to get compiled. This is realised using the command
+\begin{verbatim}
+\input{subfolder/filename.tex}
+\end{verbatim}
+To exclude a section from the compiling process, comment or remove the correspondent line. If no subfolder is specified, \LaTeX\ looks for it in the same folder of \url{thesis.tex}
+
+E.g. the introduction source file is in the body subfolder, and is included using the command \begin{verbatim} \input{body/introduction.tex} \end{verbatim}
+
+\subsection{Front page}
+
+Two front pages are provided: 
+\begin{enumerate}
+\item \url{frontPage.tex} for thesis with a single Relatore
+\item \url{frontPage-cr.tex} for thesis with Relatore and Correlatore
+\end{enumerate}
+choose what is needed adapting lines 94-95.
+
+\subsection{Dedication}
+Dedication is the initial inspirational quote. Can be edited in the file \url{dedication.tex} or removed.
+
+\subsection{Chapter names}
+Chapter and section names are in this form:
+\begin{verbatim}
+\chapter[Name in the index]{Name on the title}
+\end{verbatim}
+To exclude them from the numbering, use the *; If no name for the index is specified, will be assumed the same. For example:
+\begin{verbatim}
+\chapter*{Name on the title}
+\end{verbatim}
+won't be numbered and will have the same name in the title and in the index.
+
+
+\section{}

@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %	MSc THESIS TEMPLATE
-%	developed for my master thesis at the Universit· di Torino
+%	developed for my master thesis at the Universit√° di Torino
 %
 %	by Eugenio Senes (eugenio.senes@gmail.com)
 %
@@ -11,7 +11,9 @@
 
 %% DOCUMENT CLASS (alternative to book is 'report')
 % Print just right page or both sides (comment the other one)
-\documentclass[12pt,a4paper,openright,oneside]{book}  %%One sided
+\documentclass[12pt,a4paper,openright,oneside]{book}	%%One sided
+%\documentclass[12pt,a4paper,openright,twoside]{book}	%%Double sided
+
 
 %% SET MARGINS OF THE PAGES
 \usepackage{geometry}
@@ -20,9 +22,9 @@
 %% HEADERS AND FOOTERS
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhf{} %clears default header and footer
-\rhead{} %right head
-\lhead{ \leftmark} %left head
+\fancyhf{} 			%clears default header and footer
+\rhead{} 			%right head
+\lhead{ \leftmark} 	%left head
 \rfoot{\thepage}
 %%consider using also chead, cfoot, lfoot
 %coherce the plain stile to this (e.g. the first page of every chapter)
@@ -39,7 +41,7 @@
   {\pagestyle{empty}\origdoublepage}%
 }
 %% ALLOW PAGE ROTATION
-\usepackage{rotating}
+\usepackage{lscape}
 
 %% HYPERTEXT SETUP
 \usepackage{hyperref}
@@ -51,8 +53,7 @@
     urlcolor=black
 }
 %% PDF SETTINGS
-\hypersetup
-{
+\hypersetup{
     pdfauthor={AuthorName},
     pdftitle={shortTitle},
     pdfsubject={subject},
@@ -68,19 +69,30 @@
 \usepackage[italian,english]{babel} %%Set English as main language of the document
 %% FIGURES
 \usepackage{graphicx}
+\usepackage{subfigure}		%%allow side by side figures with single caption
+%% TABLES
+\usepackage{multirow}		%%allow to merge rows in the tables
+\usepackage{booktabs}		%%allow use of \toprule, \midrule, \bottomrule in tables
 %%CAPTIONS
 \usepackage{caption}
 %% BIBLIOGRAPHY
 \usepackage[babel]{csquotes}
+%% CODE LISTINGS
+\usepackage{listings}		%%allow to use code listings
+
+%% HYPENATON
+\hyphenation{te-si pip-po paperino}	%manual hyphenation
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% BEGIN DOCUMENT
 \begin{document}
 
-%%%% HEAD  OF THE DOCUMENT
+%%%%%% HEAD  OF THE DOCUMENT
 \frontmatter
 %%FRONT PAGE
 \input{head/frontPage.tex}
+%\input{head/frontPage-cr.tex}
 \clearemptydoublepage
 %%DEDICATION (the initial quote)
 \input{head/dedication}
@@ -93,7 +105,8 @@
 %summary
 \tableofcontents
 \clearemptydoublepage
-%%%% BODY OF THE DOCUMENT
+
+%%%%%% BODY OF THE DOCUMENT
 \mainmatter
 %%INTRODUCTION
 \input{body/introduction.tex}
