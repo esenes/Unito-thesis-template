@@ -74,5 +74,111 @@ To exclude them from the numbering, use the *; If no name for the index is speci
 \end{verbatim}
 won't be numbered and will have the same name in the title and in the index.
 
+\section{Bulleting}
 
-\section{}
+Bullet list example
+\begin{itemize}
+\item first point
+\item second point
+\item third point \\
+\end{itemize}
+
+\noindent
+Enumeration example
+\begin{enumerate}
+\item first point
+\item second point
+\item third point\\
+\end{enumerate}
+
+\noindent
+Description example
+\begin{description}
+\item[first descr] first point
+\item[second descr]  second point
+\item[third descr]  third point\\
+\end{description}
+
+\noindent
+\dots but you can also build nested lists
+\begin{itemize}
+\item first point
+	\begin{itemize} %tab is only for the readability, but not necessary
+	\item first point
+	\item second point
+	\end{itemize}
+\item second point
+\item third point \\
+\end{itemize}
+
+
+\section{Floating objects}
+
+Floating objects are tables, figures and so on. 
+
+\subsection{Position, captions and cross-referencing}
+
+To force the position of an object use the options, for example:
+\begin{verbatim}
+\begin{figure}[htb]
+\end{verbatim}
+where [htb] means that the priority of positioning is \url{h} = here, \url{t} = top, \url{b} = bottom. Also \url{p} can be used and means that the object is placed in a page on itself.
+
+Captions are managed automatically using the command
+\begin{verbatim}
+\caption{The title of my object}
+\end{verbatim}
+to cross reference to the object use the 
+\begin{verbatim} 
+\label{labelName} 
+\end{verbatim} 
+to assign a name to the object and  
+\begin{verbatim} 
+\ref{labelName}
+\end{verbatim} 
+to refer to that.
+
+
+
+\subsection{Figures}
+
+Insert a figure using the code
+\begin{verbatim} 
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.15]{pictures/logo.png}
+\caption{the logo of UniTo}
+\label{myFigure}
+\end{figure}
+\end{verbatim} 
+
+then you can cross-reference to it. In this case the discussion is about Fig. \ref{myFigure}.
+
+Where the number of the figure has been gotten using 
+\begin{verbatim} 
+\ref{myFigure}
+\end{verbatim} 
+
+
+\begin{figure}[htb]
+\centering
+
+\includegraphics[scale=0.15]{pictures/logo.png}
+\caption{the logo of UniTo}
+
+\end{figure}
+
+\subsection{Subfigures}
+
+\begin{figure}[htb]
+\centering
+\subfigure[title of first subfigure]
+	{\includegraphics[scale=0.15]{pictures/logo.png}}
+\subfigure[title of second subfigure]
+	{\includegraphics[scale=0.3]{pictures/logo.png}}	
+\caption{Two logos of UniTo of different sizes}
+
+\end{figure}
+
+\subsection{Tables}
+
